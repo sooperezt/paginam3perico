@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pk</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/lightbox.min.css">
+    <script src="https://kit.fontawesome.com/e315c9ed56.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .product {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: calc(33.333% - 20px); 
+            box-sizing: border-box;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .product img:hover {
+            transform: scale(1.05);
+        }
+
+        .product h3 {
+            margin: 15px 0 10px;
+            color: #333;
+            font-size: 1.2em;
+        }
+
+        .product p {
+            color: #777;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .product {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product {
+                width: 100%; 
+            }
+        }
+
+        #seccion-pago {
+            display: none; 
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+ 
+
+    </style>
+</head> 
+<body>
+    <header class="header">
+        <div class="menu container">
+            <a href="#inicio" class="logo">PK</a>
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <i class="fa fa-bars menu-icono"></i> 
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#Productos">Productos</a></li>
+                    <li><a href="#historia">Nuestra historia</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#carrito">Carrito</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="header-content container" id="inicio">
+            <div class="header-txt">
+                <h1>Perico Kayaks</h1>
+                <p>En Perico Kayaks proporcionamos productos de alta calidad a precios accesibles para todos. Disfruta el deporte con el mejor equipamiento.</p>
+                <a href="#informacion" class="btn-1">Más Información</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="slider-section">
+        <section class="slider">
+            <div class="slider-container">
+                <div class="slide fade">
+                    <img src="imagenes/promo banner1.png" alt="Imagen 1">
+                </div>
+                <div class="slide fade">
+                    <img src="imagenes/promo banner2.png" alt="Imagen 2">
+                </div>
+                <div class="slide fade">
+                    <img src="imagenes/promo banner3.png" alt="Imagen 3">
+                </div>
+            </div>
+            <div class="slider-nav">
+                <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
+                <span class="next" onclick="changeSlide(1)">&#10095;</span>
+            </div>
+        </section>
+    </section>
+
+    <section class="general container" id="historia">
+        <h2>Nuestra Historia</h2>
+        <div class="general-content">
+            <div class="general-1 txt">
+                <h3>Nuestros comienzos</h3>
+                <p>Fundamos Perico Kayaks con la idea de hacer accesible el kayak para todos, sin comprometer la calidad. Buscando llegar a todos los que quieran realizar este deporte desde 2005.</p>
+            </div>
+            <div class="general-2 txt">
+                <h3>Crecimiento y Evolución</h3>
+                <p>Con el tiempo, hemos crecido y evolucionado, mejorando nuestros productos y expandiéndonos a nivel nacional. Siempre en constante cambio.</p>
+            </div>
+            <div class="general-3 txt">
+                <h3>Nuestro futuro</h3>
+                <p>Nos proyectamos a un futuro donde cada persona pueda disfrutar del deporte sin barreras.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container" id="Productos">
+        <h1>Nuestros Productos</h1>
+        <div class="products">
+            <div class="product">
+                <a href="imagenes/imgaleria1.png" data-lightbox="galeria" title="K1-KAYAK 1 pers.">
+                    <img src="imagenes/imgaleria1.png">
+                </a>
+                <h3>K1 - KAYAK 1 pers.</h3>
+                <p>$361.500</p>
+                <button class="add-to-cart" data-product="K1 - KAYAK 1 pers." data-price="361500">Agregar al Carrito</button>
+            </div>
+            <div class="product">
+                <a href="imagenes/imgaleria2.png" data-lightbox="galeria" title="SIMPLO - KAYAK 1 pers.">
+                    <img src="imagenes/imgaleria2.png">
+                </a>
+                <h3>SIMPLO - KAYAK 1 pers.</h3>
+                <p>$378.500</p>
+                <button class="add-to-cart" data-product="SIMPLO - KAYAK 1 pers." data-price="378500">Agregar al Carrito</button>
+            </div>
+            <div class="product">
+                <a href="imagenes/imgaleria3.png" data-lightbox="galeria" title="KARKU - PESCA Y TRAVESIA.">
+                    <img src="imagenes/imgaleria3.png">
+                </a>
+                <h3>KARKU - PESCA Y TRAVESIA.</h3>
+                <p>$621.500</p>
+                <button class="add-to-cart" data-product="KARKU - PESCA Y TRAVESIA." data-price="621500">Agregar al Carrito</button>
+            </div>
+            <div class="product">
+                <a href="imagenes/imgaleria4.png" data-lightbox="galeria" title="TRIPLO - 1,2 y 3 pers.">
+                    <img src="imagenes/imgaleria4.png">
+                </a>
+                <h3>TRIPLO - 1,2 y 3 pers.</h3>
+                <p>$706.500</p>
+                <button class="add-to-cart" data-product="TRIPLO - 1,2 y 3 pers." data-price="706500">Agregar al Carrito</button>
+            </div>
+            <div class="product">
+                <a href="imagenes/imgaleria5.png" data-lightbox="galeria" title="AUSTRAL - KAYAK TOURING">
+                    <img src="imagenes/imgaleria5.png">
+                </a>
+                <h3>AUSTRAL - KAYAK TOURING.</h3>
+                <p>$763.000</p>
+                <button class="add-to-cart" data-product="AUSTRAL - KAYAK TOURING." data-price="763000">Agregar al Carrito</button>
+            </div>
+            <div class="product">
+                <a href="imagenes/imgaleria6.png" data-lightbox="galeria" title="BOREAL - KAYAK DE TRAVESIA">
+                    <img src="imagenes/imgaleria6.png">
+                </a>
+                <h3>BOREAL - KAYAK DE TRAVESIA.</h3>
+                <p>$1.180.000</p>
+                <button class="add-to-cart" data-product="BOREAL - KAYAK DE TRAVESIA." data-price="1180000">Agregar al Carrito</button>
+            </div>
+        </div>
+    </div>
+    </section>
+    <section class="cart-section container" id="carrito" style="display: none;">
+        <h2>Carrito de Compras</h2>
+        <div id="cart-items"></div>
+        <p id="total-price"></p>
+        <button id="finalizar-compra" onclick="irAPago()">Finalizar Compra</button>
+    </section>
+
+
+    <div id="seccion-pago" style="display:none;">
+        <h2>Método de Pago</h2>
+        <form id="form-pago">
+            <label for="metodo-pago">Selecciona un método de pago:</label>
+            <select id="metodo-pago" name="metodo-pago">
+                <option value="tarjeta">Tarjeta de Crédito/Débito</option>
+                <option value="paypal">PayPal</option>
+                <option value="transferencia">Transferencia Bancaria</option>
+            </select>
+            
+            <h3>Dirección de Envío o Retiro</h3>
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" required>
+            
+            <button type="submit">Confirmar Pago</button>
+        </form>
+    </div>
+    <script>
+        function irAPago() {
+            document.getElementById("seccion-pago").style.display = "block";
+        }
+
+        document.getElementById("form-pago").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+
+            const metodoPago = document.getElementById("metodo-pago").value;
+            const direccion = document.getElementById("direccion").value;
+
+            console.log("Método de Pago:", metodoPago);
+            console.log("Dirección:", direccion);
+
+            alert("Pago confirmado. Método: " + metodoPago + ", Dirección: " + direccion);
+            
+            document.getElementById("form-pago").reset();
+            
+            document.getElementById("seccion-pago").style.display = "none";
+        });
+    </script>
+
+
+    <section class="info-1" id="informacion">
+        <div class="info-content container">
+            <h2>Información de Interés</h2>
+            <div class="info-circulo">
+                <div class="circulo-txt">
+                    <div class="circulo-1">
+                        <h3>100%</h3>
+                    </div>
+                    <p>Garantía en todos nuestros productos</p>
+                </div>
+                <div class="circulo-txt">
+                    <div class="circulo-1">
+                        <h3>24/7</h3>
+                    </div>
+                    <p>Soporte al cliente</p>
+                </div>
+                <div class="circulo-txt">
+                    <div class="circulo-1">
+                        <h3>10,000+</h3>
+                    </div>
+                    <p>Clientes satisfechos</p>
+                </div>
+                <div class="circulo-txt">
+                    <div class="circulo-1">
+                        <h3>15 años</h3>
+                    </div>
+                    <p>De experiencia en el mercado</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    
+    <section class="ad-section">
+        <iframe src="https://vitapasquale.github.io/anuncio" title="Anuncio" class="ad-iframe" frameborder="0" scrolling="no"></iframe>
+    </section>
+
+    <section class="info-2" id="testimonios">
+        <div class="info-content container">
+            <h2>Testimonios</h2>
+            <div class="testi">
+                <div class="testi-left">
+                    <div class="testi-txt">
+                        <img src="imagenes/descargadibujito1.jpg" alt="Cliente 1">
+                        <h3>Cliente Satisfecho</h3>
+                        <p>"Increíble calidad y precios accesibles. Muy satisfecho con mi compra."</p>
+                    </div>
+                    <div class="testi-txt">
+                        <img src="imagenes/descargadibujito2.jpg" alt="Cliente 2">
+                        <h3>Aventura Segura</h3>
+                        <p>"Gracias a Perico Kayaks, pude disfrutar de una experiencia segura y divertida en el agua."</p>
+                    </div>
+                </div>
+                <div class="testi-right">
+                    <div class="testi-txt">
+                        <img src="imagenes/descargadibujito3.jpg" alt="Cliente 3">
+                        <h3>Servicio al Cliente</h3>
+                        <p>"El soporte es excelente, respondieron a todas mis dudas rápidamente."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer container" id="contacto">
+        <h2>Contacto</h2>
+        <form id="contactForm">
+            <input class="campo" type="text" placeholder="Nombre" required>
+            <input class="campo" type="email" placeholder="Email" required>
+            <input type="submit" class="btn-2" value="Enviar">
+        </form>
+        <div id="responseMessage" style="display:none; margin-top: 20px;"></div>
+
+        <div class="footer-txt">
+           
+        </div>
+
+
+   
+        <p>&copy; 2024 <a href="https://sooperezt.github.io/anuncioperico/" target="_blank" style="color: #007BFF; text-decoration: none; font-weight: bold;">Perico Kayaks</a> - Todos los derechos reservados</p>
+
+        
+        <p>Para consultas, escríbenos a: <a href="mailto:contacto@pericokayaks.com" style="color: #007BFF; text-decoration: none;">contacto@pericokayaks.com</a></p>
+        <div style="margin: 20px 0;">
+            <p>Síguenos en nuestras redes sociales:</p>
+            <div class="social-icons" style="font-size: 1.5em;">
+                <a href="https://facebook.com/pericokayaks" target="_blank" style="margin: 0 10px; color: #3b5998;">
+                    <img src="imagenes/iconofacebook.png" alt="Facebook" style="width: 24px; vertical-align: middle;">
+                </a>
+                <a href="https://www.instagram.com/pericokayaks/" target="_blank" style="margin: 0 10px; color: #C13584;">
+                    <img src="imagenes/logo instgram.jpg" alt="Instagram" style="width: 24px; vertical-align: middle;">
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+    <a href="#" class="btn-back-to-top" id="btnBackToTop">&#8593; Volver Arriba</a>
+    <script>
+        
+        window.onscroll = function() {
+            const button = document.getElementById('btnBackToTop');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                button.style.display = "block"; 
+            } else {
+                button.style.display = "none"; 
+            }
+        };
+    
+        document.getElementById('btnBackToTop').onclick = function() {
+            document.body.scrollTop = 0; 
+            document.documentElement.scrollTop = 0; 
+        };
+    </script>
+    <script>
+        document.getElementById('contactForm').onsubmit = function(event) {
+            event.preventDefault(); 
+            const responseMessage = document.getElementById('responseMessage');
+            responseMessage.textContent = "Gracias, nos pondremos en contacto contigo!";
+            responseMessage.style.display = "block";
+            this.reset(); 
+        };
+    </script>
+
+    <script>
+        let slideIndex = 0; 
+        showSlides(); 
+        
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; 
+            }
+            slideIndex++; 
+            if (slideIndex > slides.length) {
+                slideIndex = 1; 
+            }
+            slides[slideIndex - 1].style.display = "block"; 
+            setTimeout(showSlides, 3000); 
+        }
+        
+        function changeSlide(n) {
+            showSlides(slideIndex += n); 
+        }
+    </script>
+
+   
+    
+    <script>
+        let cart = [];
+    
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const product = button.getAttribute('data-product');
+                const price = parseInt(button.getAttribute('data-price'));
+                cart.push({ product, price });
+                alert(`${product} ha sido agregado al carrito.`);
+            });
+        });
+    
+        const showCart = () => {
+            const cartSection = document.getElementById('carrito');
+            const cartItems = document.getElementById('cart-items');
+            const totalPrice = document.getElementById('total-price');
+    
+            cartSection.style.display = 'block';
+            cartItems.innerHTML = ''; 
+    
+            let total = 0;
+            cart.forEach(item => {
+                const itemElement = document.createElement('p');
+                itemElement.textContent = `${item.product} - $${item.price.toLocaleString()}`;
+                cartItems.appendChild(itemElement);
+                total += item.price;
+            });
+    
+            totalPrice.textContent = `Total: $${total.toLocaleString()}`;
+        };
+    
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', showCart);
+        });
+    </script>
+        <script src="js/lightbox-plus-jquery.min.js"></script>
+        
+
+</body>
+</html>
